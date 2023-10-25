@@ -16,7 +16,10 @@ def auto_canny_edge_detection(img, sigma=0.33):
 
 model = YOLO("yolov8x-seg.pt")
 
-img = cv2.imread("./data/img1.png")
+path_to_img = input("Enter the path to the image file: (default: ./data/img1.png)")
+if path_to_img == "":
+    path_to_img = "./data/img1.png"
+img = cv2.imread(path_to_img)
 result = model.predict(img, conf=0.5)[0]
 boxes = result.boxes
 xyxys = boxes.xyxy
@@ -56,6 +59,5 @@ for xyxy in xyxys:
     )
 
 cv2.imshow("Detection", img)
-cv2.imwrite("./output.jpg", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

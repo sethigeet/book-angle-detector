@@ -14,3 +14,11 @@ It leverages the power of OpenCV and YOLOv8 for object detection and edge detect
 ## Preview
 
 ![Preview of application](output.jpg)
+
+## Usage
+
+To run the program:
+
+1. Install the required dependencies using `pip install -r requirements.txt` (you may use a virtual environment)
+1. Add your own sample images if you wish to.
+1. Run the program using `python main.py` and see the result on you screen.
